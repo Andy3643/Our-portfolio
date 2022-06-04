@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%block content%}
+{{block.super}}
+<div class="intro">
+    <h2>My Portfolio</h2>
+</div>
+<div class="myprojects">
+    <h3 class="text-center">My Projects</h3>
+    <div class="row container">
+        {% for profile in profiles %}
+        <div class="col-3">
+            <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img  src="{{profile.project_image.url}}" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{profile.title}}</h5>
+                  <p class="card-text">{{profile.description}}</p>
+                  <p class="card-text">{{profile.date_created}}</p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+{%endblock%}
